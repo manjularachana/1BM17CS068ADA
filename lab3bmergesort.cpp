@@ -15,7 +15,7 @@ void combine(int a[],int low,int mid,int high)
 int i=low , j=mid+1, k=low,c[15];
 
 while (i<=mid && j<=high) {
-count+=1;
+count++;
 if (a[i]<a[j]){
 
 c[k]=a[i];
@@ -24,6 +24,7 @@ c[k]=a[i];
 }
 else
 {
+
 c[k]=a[j] ;
  k=k+1;
 j=j+1;
@@ -31,7 +32,6 @@ j=j+1;
  }
 
 if (i>mid){
-
 while (j<=high) { 
 c[k]=a[j];
  k=k+1;
@@ -41,7 +41,6 @@ j=j+1;
 }
 
 if (j>high){
-
 while (i<=mid) { 
 c[k]=a[i];
 k=k+1;
@@ -89,7 +88,7 @@ cout<<"sorted elements are:";
 for(int i=0;i<n;i++){
 cout<<a[i]<<" ";
 }
-cout<<"number of comparisions"<<count;
+cout<<"\nnumber of comparisions is since we will not compare elements if one of the sorted arrays are exhausted we will get 2 extra comparisions so"<<(count-2);
 return 0;
 }
 
