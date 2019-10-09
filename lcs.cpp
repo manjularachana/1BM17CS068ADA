@@ -1,10 +1,18 @@
+#include<bits/stdc++.h>
+#include<cstring>
 #include<iostream>
 using namespace std;
-#define m 6
-#define n 7
+#define m 10
+#define n 9
 int l[m+1][n+1];
+int max(int a, int b)
+{
+    return (a > b)? a : b;
+}
 void lcs(char x[],char y[]){
 int i,j;
+cout<<x;
+cout<<y;
 for(i=0;i<=m;i++){
 for(j=0;j<=n;j++){
 if(i==0||j==0){
@@ -21,11 +29,14 @@ l[i][j]=max(l[i-1][j],l[i][j-1]);
 }
 }
 int main(){
-  char x[m],y[n];
+  char x[m+1],y[n+1];
   cout<<"enter the string1";
   cin>>x;
+cin.sync();
   cout<<"enter the string2";
+  cin.sync();
   cin>>y;
+  cin.sync();
   lcs(x,y);
   int index = l[m][n];
   for(int i=0;i<=m;i++){
@@ -53,7 +64,7 @@ int main(){
         {j--;}
    }
    //for(int k=0;k<=index;k++){
-     cout<<lcs;
+     puts(lcs);
    //}
    cout<<" is the longest subsequence";
    return 0;
